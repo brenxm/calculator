@@ -6,6 +6,7 @@
     --screen-font-color: rgba(255,255,255,1);
     --logo-color: rgb(74, 94, 74);
     --screen-color: rgb(47, 61, 57);
+    --gear-icon-color: rgba(23, 62, 66, 0.735);
 }
 
 body {
@@ -83,13 +84,14 @@ body {
 
 /* INFO styles*/
 .info-container {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
     flex: 1 1 6%;
     font-size: 0.7rem;
     color: white;
     box-sizing: border-box;
     text-shadow: 0 0 4px black;
+    display: flex;
+    justify-content: space-between;
 }
 
 .main-logo {
@@ -109,11 +111,26 @@ body {
     font-style: italic;
 }
 
+.settings-button {
+    height: 1.6rem;
+    width: 1.6rem;
+}
+
+#Layer_1 {
+    fill: var(--gear-icon-color)
+}
+
 @media (max-width: 768px) {
     .calculator-casing{
         padding: 5% 8%;
         width: 771px;
         height: auto;
         aspect-ratio: 2/3;
+    }
+
+    .screen {
+        font-size: 3em;
+        width: 100%;
+        height: 100%;
     }
 }
