@@ -1,3 +1,13 @@
+:root{
+    --main-pads: rgba(255,255,255,1);
+    --operator-pads: rgba(255,255,255,1);
+    --clear-pad: rgba(255,255,255,1);
+    --pads-font-color: rgba(255,255,255,1);
+    --screen-font-color: rgba(255,255,255,1);
+    --logo-color: rgb(74, 94, 74);
+    --screen-color: rgb(47, 61, 57);
+}
+
 body {
     justify-content: center;
     align-items: center;
@@ -23,7 +33,7 @@ body {
 .screen-container {
     margin: 0 auto;
     width: 100%;
-    background-color: white;
+    background-color: var(--screen-color);
     flex: 1 1 10%;
     
 }
@@ -34,14 +44,10 @@ body {
     letter-spacing: 6px;
     padding: 5px 10px;
     font-family: Orbitron;
+    color: var(--screen-font-color)
 }
 
-.info-container {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.6);
-    margin: 0 auto;
-    flex: 1 1 6%;
-}
+
 
 .button-container {
     flex: 1 1 84%;
@@ -55,11 +61,14 @@ body {
     height: auto;
     width: auto;
     border: none;
-    border-radius: 50%;
+    border-radius: 40%;
     background-color: rgba(53, 88, 85, 0.856);
     color: white;
     font-size: 1.5rem;
     box-shadow: 0 0 3px rgb(1, 15, 3);
+}
+.operators{
+    background-color: rgba(53, 79, 88, 0.856);
 }
 
 #plus-operator {
@@ -69,7 +78,35 @@ body {
 }
 
 #clear-button {
-        background-color: rgba(88, 81, 53, 0.856);
+        background-color: rgba(188, 33, 33, 0.856);
+}
+
+/* INFO styles*/
+.info-container {
+    width: 90%;
+    margin: 0 auto;
+    flex: 1 1 6%;
+    font-size: 0.7rem;
+    color: white;
+    box-sizing: border-box;
+    text-shadow: 0 0 4px black;
+}
+
+.main-logo {
+    display: inline-block;
+    background-color: var(--logo-color);
+    border-top-left-radius: 5px;
+    border: 3px solid var(--logo-color);
+}
+.edition-logo{
+    display: inline-block;
+    border: 3px solid var(--logo-color);
+    border-left: none;
+    position: relative;
+    padding: 0 3px;
+    left: -3px;
+    border-bottom-right-radius: 5px;
+    font-style: italic;
 }
 
 @media (max-width: 768px) {
