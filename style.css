@@ -123,15 +123,15 @@ body {
 
 @media (max-width: 768px) {
     .calculator-casing{
-        margin: auto 50vw;
-        padding: 15vw 5vw;
-        width: 771px;
+        margin: auto 10%;
+        padding: 15vw 10vw;
+        width: 90vw;
         height: auto;
         aspect-ratio: 2/3;
     }
 
     .screen {
-        font-size: 10vw;
+        font-size: 8vw;
         width: 100%;
         padding: 1vw 1vw;
         height: 100%;
@@ -142,5 +142,9 @@ body {
 
     .info-container{
         font-size: 3.5vw;
+    }
+
+    body{
+        padding-top: 8%;
     }
 }
