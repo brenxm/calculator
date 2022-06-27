@@ -41,6 +41,8 @@ body {
 }
 
 .screen {
+    height: 100%;
+    width: 100%;
     text-align: end;
     font-size: 1.6rem;
     letter-spacing: 6px;
@@ -98,6 +100,7 @@ body {
     text-shadow: 0 0 4px black;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .main-logo {
@@ -128,25 +131,23 @@ body {
 
 @media (max-width: 768px) {
     .calculator-casing{
-        margin: auto 10%;
         padding: 15vw 10vw;
-        width: 90vw;
+        width: 95vw;
         height: auto;
         aspect-ratio: 2/3;
     }
 
     .screen {
-        font-size: 8vw;
-        width: 100%;
+        font-size: 6vw;
         padding: 1vw 1vw;
-        height: 100%;
+        text-align: end;
     }
     .settings-button{
-        width: 8vw;
+        width: 6vw;
     }
 
     .info-container{
-        font-size: 3.5vw;
+        font-size: 2.5vw;
     }
 
     body{
