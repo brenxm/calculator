@@ -1,4 +1,3 @@
-import {performOperation, nullValidator, operatorInput, numberInput} from "./mathoperations.mjs";
 const buttons = document.querySelectorAll('button');
 const monitor = document.querySelector('.screen');
 
@@ -10,32 +9,12 @@ buttons.forEach(button => {
     button.addEventListener('click', (event)=>{
         const buttonClicked = event.target;
         const inputValue = buttonClicked.getAttribute('data-input');
-        buttonClicked.getAttribute('class') == 'number' ? numberInput(firstInput, secondInput, focusedOperator, inputValue, monitor) : operatorInput(firstInput, secondInput, focusedOperator, inputValue, monitor);
+        buttonClicked.getAttribute('class') == 'number' ? numberInput(inputValue) : operatorInput(inputValue);
     })});
 
 
 
-
-<<<<<<< HEAD
-=======
-function performOperation(firstInput, secondInput, typeOfOperator){
-    switch(typeOfOperator){
-        case 'plus' :
-        return firstInput + secondInput;
-
-        case 'minus' :
-        return firstInput - secondInput;
-
-        case 'divide' :
-        return firstInput / secondInput;
-
-        case 'multiply' :
-        return firstInput * secondInput;
-
-        case 'percentage' :
-        return firstInput * (secondInput / 100);
-    }
-}
+//operational functions//
 
 
 //inputs //
@@ -133,47 +112,53 @@ function operatorInput(inputValue){
             secondInput = null;
             focusedOperator = null;
             monitor.textContent = '';
-            return;
+            break;
         
         case 'backspace' :
             if(nullValidator() == 1){
                const backspace = firstInput.split('').splice(0, firstInput.length - 1).join('');
                firstInput = backspace;
                monitor.textContent = backspace;
-               return;
+               break;
             } 
 
             else if (nullValidator() == 2){
                 focusedOperator = null;
                 monitor.textContent = '';
-                return;
+                break;
             }
 
             else if (nullValidator() == 3){
                 const backspace = secondInput.split('').splice(0, secondInput.length - 1).join('');
                 secondInput = backspace;
                 monitor.textContent = backspace;
-                return;
+                break;
             }
-        
-        case '+':
-        case '-':
-        case '/':
-        case 'x':
-        case '%': 
-        console.log('clicked');
-        focusedOperator = inputValue;
-        monitor.textContent = inputValue;
-    }
-    if (nullValidator() == null) return;
-    switch(inputValue){
-        case 'plus':
-        case 'minus':
-        case 'divide':
-        case 'multiply':
-        case 'percentage':
-    }
 
+            else if (nullValidator() == null) break;
+        
+        case '+': case '-': case '/': case 'x': case '%': 
+            if (nullValidator() == null) break;
+            if (nullValidator() == 1 || nullValidator() == 2){
+                focusedOperator = inputValue;
+                monitor.textContent = inputValue;
+                break;
+            }
+            if (nullValidator() == 3){
+                firstInput = performOperation(firstInput, secondInput, focusedOperator);
+                monitor.textContent = firstInput;
+                focusedOperator = inputValue;
+                secondInput = null;
+            }
+
+        case 'equal' :
+            if (nullValidator() == 3){
+                firstInput = performOperation(firstInput, secondInput, focusedOperator);
+                monitor.textContent = firstInput;
+                secondInput = null;
+                focusedOperator = null;
+            }
+    }
 }
 
 
@@ -184,4 +169,3 @@ function nullValidator(){
     if (firstInput && focusedOperator && !secondInput) return 2;
     if (firstInput && focusedOperator && secondInput) return 3;
 }
->>>>>>> parent of d155bb4 (Finish math operation functions, add fresh theme js file)
