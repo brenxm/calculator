@@ -17,22 +17,37 @@ buttons.forEach(button => {
 //operational functions//
 
 function performOperation(firstInput, secondInput, typeOfOperator){
+    x = parseFloat(firstInput);
+    y = parseFloat(secondInput);
+    let answer;
+    
     switch(typeOfOperator){
-        case 'plus' :
-        return firstInput + secondInput;
+        case '+' :
+        answer = x + y;
+        break;
 
-        case 'minus' :
-        return firstInput - secondInput;
+        case '-' :
+        answer = x - y;
+        break;
 
-        case 'divide' :
-        return firstInput / secondInput;
+        case '/' :
+        answer = x / y;
+        break;
 
-        case 'multiply' :
-        return firstInput * secondInput;
+        case 'x' :
+        answer = x * y;
+        break;
 
-        case 'percentage' :
-        return firstInput * (secondInput / 100);
+        case '%' :
+        answer = x * (y / 100);
+        break;
     }
+
+    if(answer.toString().length > 9) {
+        return `too long`;
+    }
+
+    return answer.toString();
 }
 
 
@@ -131,47 +146,53 @@ function operatorInput(inputValue){
             secondInput = null;
             focusedOperator = null;
             monitor.textContent = '';
-            return;
+            break;
         
         case 'backspace' :
             if(nullValidator() == 1){
                const backspace = firstInput.split('').splice(0, firstInput.length - 1).join('');
                firstInput = backspace;
                monitor.textContent = backspace;
-               return;
+               break;
             } 
 
             else if (nullValidator() == 2){
                 focusedOperator = null;
                 monitor.textContent = '';
-                return;
+                break;
             }
 
             else if (nullValidator() == 3){
                 const backspace = secondInput.split('').splice(0, secondInput.length - 1).join('');
                 secondInput = backspace;
                 monitor.textContent = backspace;
-                return;
+                break;
             }
-        
-        case '+':
-        case '-':
-        case '/':
-        case 'x':
-        case '%': 
-        console.log('clicked');
-        focusedOperator = inputValue;
-        monitor.textContent = inputValue;
-    }
-    if (nullValidator() == null) return;
-    switch(inputValue){
-        case 'plus':
-        case 'minus':
-        case 'divide':
-        case 'multiply':
-        case 'percentage':
-    }
 
+            else if (nullValidator() == null) break;
+        
+        case '+': case '-': case '/': case 'x': case '%': 
+            if (nullValidator() == null) break;
+            if (nullValidator() == 1 || nullValidator() == 2){
+                focusedOperator = inputValue;
+                monitor.textContent = inputValue;
+                break;
+            }
+            if (nullValidator() == 3){
+                firstInput = performOperation(firstInput, secondInput, focusedOperator);
+                monitor.textContent = firstInput;
+                focusedOperator = inputValue;
+                secondInput = null;
+            }
+
+        case 'equal' :
+            if (nullValidator() == 3){
+                firstInput = performOperation(firstInput, secondInput, focusedOperator);
+                monitor.textContent = firstInput;
+                secondInput = null;
+                focusedOperator = null;
+            }
+    }
 }
 
 
