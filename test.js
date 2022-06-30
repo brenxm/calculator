@@ -1,3 +1,3 @@
-const string = '12345.5';
-const number = 12345.2;
-console.log(parseFloat(string));
+import {hellow} from "./mathoperations.mjs";
+
+console.log(hellow());
