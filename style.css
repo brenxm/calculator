@@ -23,6 +23,7 @@ body {
     margin: 0 6%;
     display: flex;
     background-color: var(--main-bg);
+    flex-direction: column;;
 }
 
 .calculator-casing {
@@ -136,6 +137,18 @@ body {
 
 #Layer_1 {
     fill: var(--gear-icon-color)
+}
+
+/*footer*/
+.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 20rem;
+    margin-top: 1rem;
+}
+
+#codelink {
+    text-decoration: none;
 }
 
 @media (max-width: 768px) {

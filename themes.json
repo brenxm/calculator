@@ -4,7 +4,7 @@
         "--main-pads": "rgba(160,160,160,0.856)",
         "--operator-pads": "rgb(135,135,135)",
         "--clear-pad": "rgb(195,52, 52)",
-        "--pads-font-color": "rgba(255,255,255,1)",
+        "--pads-font-color": "rgba(50,50,50,1)",
         "--screen-font-color": "rgba(255,255,255,1)",
         "--logo-color": "rgb(3,3,3)",
         "--logo-font-color": "rgb(0,0,0)",
