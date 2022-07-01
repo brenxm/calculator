@@ -30,6 +30,17 @@ setting.addEventListener('click', () => {
     themeChange(document.querySelector(':root'), onLightMode ? onLightMode = false : onLightMode = true);
 })
 
+document.addEventListener('keydown', (e)=>{
+    if(e.code == "Backspace") return operatorInput('backspace');
+    if(/[0-9]/.test(e.code[e.code.length - 1])) return numberInput(e.code[e.code.length - 1]);
+    if(e.code == 'Escape') return operatorInput('clear');
+    if (e.code == 'NumpadEnter') return operatorInput('equal');
+    if(e.code == 'NumpadAdd') return operatorInput('+');
+    if(e.code == 'NumpadSubtract') return operatorInput('-');
+    if(e.code == 'NumpadMultiply') return operatorInput('x');
+    if (e.code == 'NumpadDivide122') return operatorInput('/');
+})
+
 
 function performOperation(firstInput, secondInput, typeOfOperator) {
     const x = parseFloat(firstInput);
