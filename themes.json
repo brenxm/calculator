@@ -1,0 +1,37 @@
+{
+    "defaultLight": {
+        "--main-bg": "white",
+        "--main-pads": "rgba(160,160,160,0.856)",
+        "--operator-pads": "rgb(135,135,135)",
+        "--clear-pad": "rgb(195,52, 52)",
+        "--pads-font-color": "rgba(255,255,255,1)",
+        "--screen-font-color": "rgba(255,255,255,1)",
+        "--logo-color": "rgb(3,3,3)",
+        "--logo-font-color": "rgb(0,0,0)",
+        "--main-logo-font-color": "white",
+        "--screen-color": "rgb(43,43,43)",
+        "--gear-icon-color": "rgb(0,0,0)",
+        "--background-color": "rgb(199,199,199)",
+        "--casing-border": "2px solid black",
+        "--button-border": "1px solid black",
+        "--background-image": "url('./images/./22488_moody-landscape-photography_w1120.jpg')"
+    },
+
+    "defaultDark": {
+        "--main-bg":"rgb(20, 20, 20)",
+        "--main-pads": "rgba(62, 62, 62, 0.856)",
+        "--operator-pads": "rgb(31, 31, 31)",
+        "--clear-pad": "rgb(195, 52, 52)",
+        "--pads-font-color": "rgba(255,255,255,1)",
+        "--screen-font-color": "rgb(16, 185, 231)",
+        "--logo-color": "rgb(151, 151, 151)",
+        "--logo-font-color": "rgb(236, 236, 236)",
+        "--main-logo-font-color": "rgb(0, 0, 0)",
+        "--screen-color": "rgb(43,43,43)",
+        "--gear-icon-color": "rgb(177, 177, 177)",
+        "--background-color": "rrgb(27, 27, 27)",
+        "--casing-border": "2px solid rgb(205, 205, 205)",
+        "--button-border": "1px solid rgb(192, 234, 250)",
+        "--background-image": "url('./images/./22488_moody-landscape-photography_w1120.jpg')"
+    }
+}

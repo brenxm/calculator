@@ -1,12 +1,19 @@
 :root{
-    --main-pads: rgba(255,255,255,1);
-    --operator-pads: rgba(255,255,255,1);
-    --clear-pad: rgba(255,255,255,1);
+    --main-bg: rgb(20, 20, 20);
+    --main-pads: rgba(62, 62, 62, 0.856);
+    --operator-pads: rgb(31, 31, 31);
+    --clear-pad: rgb(195, 52, 52);
     --pads-font-color: rgba(255,255,255,1);
-    --screen-font-color: rgba(255,255,255,1);
-    --logo-color: rgb(74, 94, 74);
-    --screen-color: rgb(47, 61, 57);
-    --gear-icon-color: rgba(23, 62, 66, 0.735);
+    --screen-font-color: rgb(16, 185, 231);
+    --logo-color: rgb(151, 151, 151);
+    --logo-font-color: rgb(236, 236, 236);
+    --main-logo-font-color: rgb(25, 25, 25);
+    --screen-color: rgb(17, 17, 17);
+    --gear-icon-color: rgb(177, 177, 177);
+    --background-color: rgb(27, 27, 27);
+    --casing-border: 2px solid rgb(133, 133, 133);
+    --button-border: 1px solid rgb(192, 234, 250);
+    --background-image: url("./images/./22488_moody-landscape-photography_w1120.jpg");
 }
 
 body {
@@ -15,20 +22,22 @@ body {
     padding-top: 3rem;
     margin: 0 6%;
     display: flex;
+    background-color: var(--main-bg);
 }
 
 .calculator-casing {
     box-sizing: border-box;
     width: 20rem;
     aspect-ratio: 2/3;
-    background-color: red;
     padding: 3rem 2.3rem;
     padding-bottom: 4rem;
     display: flex;
     flex-direction: column;
     gap: 1%;
     border-radius: 15px;
-    background-image: url("./22488_moody-landscape-photography_w1120.jpg");
+    border: var(--casing-border);
+    background-color: var(--background-color);
+    background-image: none;
 }
 
 .screen-container {
@@ -37,7 +46,7 @@ body {
     background-color: var(--screen-color);
     flex: 1 1 10%;
     display: flex;
-    
+    border-radius: 8px;
 }
 
 .screen {
@@ -48,7 +57,7 @@ body {
     letter-spacing: 6px;
     padding: 5px 10px;
     font-family: Orbitron;
-    color: var(--screen-font-color)
+    color: var(--screen-font-color);
 }
 
 
@@ -67,17 +76,17 @@ body {
     box-sizing: border-box;
     height: 90%;
     width: 90%;
-    border: none;
+    border: var(--button-border);
     border-radius: 40%;
-    background-color: rgba(53, 88, 85, 0.856);
-    color: white;
+    background-color: var(--main-pads);
+    color: var(--pads-font-color);
     padding: none;
     margin: none;
     font-size: 1.5rem;
     box-shadow: 0 0 3px rgb(1, 15, 3);
 }
 .operators{
-    background-color: rgba(53, 79, 88, 0.856);
+    background-color: var(--operator-pads);
 }
 
 #plus-operator {
@@ -87,7 +96,7 @@ body {
 }
 
 #clear-button {
-        background-color: rgba(188, 33, 33, 0.856);
+        background-color: var(--clear-pad);
 }
 
 /* INFO styles*/
@@ -95,9 +104,8 @@ body {
     width: 100%;
     flex: 1 1 6%;
     font-size: 0.7rem;
-    color: white;
+    color: var(--logo-font-color);
     box-sizing: border-box;
-    text-shadow: 0 0 4px black;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -108,6 +116,7 @@ body {
     background-color: var(--logo-color);
     border-top-left-radius: 5px;
     border: 3px solid var(--logo-color);
+    color: var(--main-logo-font-color);
 }
 .edition-logo{
     display: inline-block;
